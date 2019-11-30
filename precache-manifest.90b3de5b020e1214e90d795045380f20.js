@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "79f31076243c99abb36e23ab04c0ba41",
+    "revision": "91caf4bb4b578cd35138f67175af37ea",
     "url": "/graybot-web/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/graybot-web/static/js/2.42c2eb2f.chunk.js"
   },
   {
-    "revision": "8a37dbac7f6d72536efd",
-    "url": "/graybot-web/static/js/main.6e463d30.chunk.js"
+    "revision": "bb3c9102a40855954a18",
+    "url": "/graybot-web/static/js/main.438ff6e6.chunk.js"
   },
   {
     "revision": "f1c9340f4d11af3dea07",

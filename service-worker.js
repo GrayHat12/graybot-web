@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/graybot-web/precache-manifest.688561c625b3ee3dcdf78c5fe2122230.js"
+  "/graybot-web/precache-manifest.90b3de5b020e1214e90d795045380f20.js"
 );
 
 self.addEventListener('message', (event) => {
