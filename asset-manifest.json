@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/graybot-web/static/js/main.16bc3b2e.chunk.js",
+    "main.js.map": "/graybot-web/static/js/main.16bc3b2e.chunk.js.map",
+    "runtime-main.js": "/graybot-web/static/js/runtime-main.fd0dd598.js",
+    "runtime-main.js.map": "/graybot-web/static/js/runtime-main.fd0dd598.js.map",
+    "static/css/2.1bfc3af4.chunk.css": "/graybot-web/static/css/2.1bfc3af4.chunk.css",
+    "static/js/2.42c2eb2f.chunk.js": "/graybot-web/static/js/2.42c2eb2f.chunk.js",
+    "static/js/2.42c2eb2f.chunk.js.map": "/graybot-web/static/js/2.42c2eb2f.chunk.js.map",
+    "index.html": "/graybot-web/index.html",
+    "precache-manifest.f281b6eff58c45ea8e4c79fe07bd8675.js": "/graybot-web/precache-manifest.f281b6eff58c45ea8e4c79fe07bd8675.js",
+    "service-worker.js": "/graybot-web/service-worker.js",
+    "static/css/2.1bfc3af4.chunk.css.map": "/graybot-web/static/css/2.1bfc3af4.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fd0dd598.js",
+    "static/css/2.1bfc3af4.chunk.css",
+    "static/js/2.42c2eb2f.chunk.js",
+    "static/js/main.16bc3b2e.chunk.js"
+  ]
+}
