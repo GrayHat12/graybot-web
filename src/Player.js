@@ -105,7 +105,7 @@ const options = {
     defaultPlayMode: 'order',
 
     //audio mode        mini | full          [type `String`  default `mini`]
-    mode: 'full',
+    mode: 'mini',
 
     /**
      * [ type `Boolean` default 'false' ]
@@ -375,7 +375,7 @@ class Player extends React.Component {
         axios(config).then((res) => {
             console.log(res.data);
             var data = res.data;
-            var list = [];
+            var list = this.state.ITEMS;
             var audioList = [];
             for (var value in this.state.ITEMS) {
                 var amapp = {
@@ -407,6 +407,7 @@ class Player extends React.Component {
             //itemHandler(list, flag);
             //console.log(audioList);
             this.changeOptions(audioList);
+            this.setState({ITEMS:list});
             this.setState({ loading: false });
         }).catch((err) => { console.log(err);this.setState({ loading: false }); alert('Error communicating with server'); });
     }
