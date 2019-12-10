@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.js": "/graybot-web/static/js/main.438ff6e6.chunk.js",
-    "main.js.map": "/graybot-web/static/js/main.438ff6e6.chunk.js.map",
+    "main.js": "/graybot-web/static/js/main.07d53d50.chunk.js",
+    "main.js.map": "/graybot-web/static/js/main.07d53d50.chunk.js.map",
     "runtime-main.js": "/graybot-web/static/js/runtime-main.fd0dd598.js",
     "runtime-main.js.map": "/graybot-web/static/js/runtime-main.fd0dd598.js.map",
     "static/css/2.1bfc3af4.chunk.css": "/graybot-web/static/css/2.1bfc3af4.chunk.css",
-    "static/js/2.42c2eb2f.chunk.js": "/graybot-web/static/js/2.42c2eb2f.chunk.js",
-    "static/js/2.42c2eb2f.chunk.js.map": "/graybot-web/static/js/2.42c2eb2f.chunk.js.map",
+    "static/js/2.d80ed0d2.chunk.js": "/graybot-web/static/js/2.d80ed0d2.chunk.js",
+    "static/js/2.d80ed0d2.chunk.js.map": "/graybot-web/static/js/2.d80ed0d2.chunk.js.map",
     "index.html": "/graybot-web/index.html",
-    "precache-manifest.90b3de5b020e1214e90d795045380f20.js": "/graybot-web/precache-manifest.90b3de5b020e1214e90d795045380f20.js",
+    "precache-manifest.8c0dc9cf208e2914e11c17a4d6d2be37.js": "/graybot-web/precache-manifest.8c0dc9cf208e2914e11c17a4d6d2be37.js",
     "service-worker.js": "/graybot-web/service-worker.js",
     "static/css/2.1bfc3af4.chunk.css.map": "/graybot-web/static/css/2.1bfc3af4.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.fd0dd598.js",
     "static/css/2.1bfc3af4.chunk.css",
-    "static/js/2.42c2eb2f.chunk.js",
-    "static/js/main.438ff6e6.chunk.js"
+    "static/js/2.d80ed0d2.chunk.js",
+    "static/js/main.07d53d50.chunk.js"
   ]
 }
