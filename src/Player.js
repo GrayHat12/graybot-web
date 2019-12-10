@@ -66,7 +66,7 @@ const options = {
     glassBg: true,
 
     //The next time you access the player, do you keep the last state  [type `Boolean` default `false`]
-    remember: true,
+    remember: false,
 
     //The Audio Can be deleted  [type `Boolean`, default `true`]
     remove: true,
@@ -303,7 +303,6 @@ const options = {
 class Player extends React.Component {
     state = {
         params: options,
-        ITEMS: [],
         loading: false
     }
     prevSearch = "<#NONE#>";
@@ -318,6 +317,64 @@ class Player extends React.Component {
         this.setState({
             params: data
         })
+    }
+    componentDidMount() {
+        var vidId = null;
+        if (window.location.href.length >= 'https://grayhat12.github.io/graybot-web/'.length + 11) {
+            vidId = window.location.href.substring('https://grayhat12.github.io/graybot-web'.length);
+            vidId = vidId.replace('/', '');
+        }
+        if (vidId != null) {
+            this.setState({ loading: true });
+            var config = {
+                method: 'post',
+                url: 'https://gray-server.herokuapp.com/video',
+                data: {
+                    videoId: vidId
+                }
+            }
+            axios(config).then((res) => {
+                var data = res.data;
+                var list = this.state.params.audioLists;
+                var audioList = [];
+                for (var value in this.state.params.audioLists) {
+                    if (value);
+                    else break;
+                    var amapp = {
+                        name: value.name,
+                        singer: value.author,
+                        cover: value.imglnk,
+                        musicSrc: value.amrl,
+                        yturl: value.yturl
+                    }
+                    audioList.push(amapp);
+                }
+                for (const [key, value] of Object.entries(data.data)) {
+                    //console.log(key, value);
+                    var amap = {
+                        name: value.title,
+                        singer: value.author,
+                        cover: value.thumb.replace('default', 'mqdefault'),
+                        musicSrc: value.best_audio.url,
+                        yturl: key
+                    }
+                    audioList.push(amap);
+                    var map = {
+                        yturl: key,
+                        name: value.title,
+                        author: value.author,
+                        amrl: value.best_audio.url,
+                        imglnk: value.thumb.replace('default', 'mqdefault')
+                    }
+                    list.push(map);
+                }
+                //itemHandler(list, flag);
+                //console.log(audioList);
+                this.changeOptions(audioList);
+                //this.setState({ITEMS:list});
+                this.setState({ loading: false });
+            }).catch((err)=>{ console.log(err); this.setState({ loading: false }); alert('Error communicating with server'); });
+        }
     }
     onShowGlassBg = () => {
         this.onChangeKey('glassBg')
@@ -375,14 +432,17 @@ class Player extends React.Component {
         axios(config).then((res) => {
             console.log(res.data);
             var data = res.data;
-            var list = this.state.ITEMS;
+            var list = this.state.params.audioLists;
             var audioList = [];
-            for (var value in this.state.ITEMS) {
+            for (var value in this.state.params.audioLists) {
+                if (value);
+                else break;
                 var amapp = {
                     name: value.name,
                     singer: value.author,
                     cover: value.imglnk,
-                    musicSrc: value.amrl
+                    musicSrc: value.amrl,
+                    yturl: value.yturl
                 }
                 audioList.push(amapp);
             }
@@ -392,7 +452,8 @@ class Player extends React.Component {
                     name: value.title,
                     singer: value.author,
                     cover: value.thumb.replace('default', 'mqdefault'),
-                    musicSrc: value.best_audio.url
+                    musicSrc: value.best_audio.url,
+                    yturl: key
                 }
                 audioList.push(amap);
                 var map = {
@@ -407,17 +468,17 @@ class Player extends React.Component {
             //itemHandler(list, flag);
             //console.log(audioList);
             this.changeOptions(audioList);
-            this.setState({ITEMS:list});
+            //this.setState({ITEMS:list});
             this.setState({ loading: false });
-        }).catch((err) => { console.log(err);this.setState({ loading: false }); alert('Error communicating with server'); });
+        }).catch((err) => { console.log(err); this.setState({ loading: false }); alert('Error communicating with server'); });
     }
     loadMore(event) {
         event.preventDefault();
         if (this.prevSearch === "<#NONE#>")
             return;
         var perv = [];
-        for (var i = 0; i < this.state.ITEMS.length; i++) {
-            perv.push(this.state.ITEMS[i].yturl);
+        for (var i = 0; i < this.state.params.audioLists.length; i++) {
+            perv.push(this.state.params.audioLists[i].yturl);
         }
         this.makeSearch(this.prevSearch, 1, perv, 5, 0);
     }
@@ -469,9 +530,9 @@ class Player extends React.Component {
                         textColor='#676767'
                     ></LoadingScreen>
                 </div>
-                    <ReactJkMusicPlayer {...params} />
+                <ReactJkMusicPlayer {...params} />
             </>
-                );
-            }
-        }
+        );
+    }
+}
 export default Player;

@@ -9,11 +9,3 @@ function App() {
 }
 
 export default App;
-
-/*
-<div className={classesLST.demo}>
-                                <List dense={false}>
-                                    {listItems(ITEMS)}
-                                </List>
-                            </div>
-*/
